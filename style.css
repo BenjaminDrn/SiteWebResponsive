@@ -67,6 +67,21 @@ a{
 }
 
 
+
+/* ============== CHAT BOT ============== */
+.bx-message-rounded::before{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    padding: 13px;
+    color: var(--second-color);
+    background: var(--first-color);
+    font-size: 30px;
+    border-radius: 50%;
+}
+
+
+
 /* ============== NAV BAR RESPONSIVE ============== */
 .header{
     width: 100%;
@@ -77,12 +92,12 @@ a{
     display: flex;
     align-items: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    
 }
 
 .nav__container{
     width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
     position: relative;
@@ -92,10 +107,20 @@ a{
     display: none;
 }
 
+.nav__brand-Menu {
+    display: flex;
+    align-items: center;
+}
+
 .nav__brand a{
+    font: var(--h2-font-size);
     color: var(--first-color);
     user-select: none;
     text-transform: uppercase;
+}
+
+.nav__menu{
+    margin-left: 2rem;
 }
 
 .nav_list{
@@ -103,19 +128,24 @@ a{
     align-items: center;
     padding: 0;
 }
-.nav__item{
 
+.nav__item{
+    margin-right: 30px;
 }
+
 .nav__link{
     display: flex;
     align-items: center;
 }
+
 .nav__link .bxs-down-arrow::before{
     display: none;
 }
+
 .nav__link h2{
     text-transform: uppercase;
     color: var(--first-color);
+    font-size: 16px;
 }
 
 .under_nav__item{
@@ -133,6 +163,7 @@ a{
 .bx{
     font-size: 25px;
     color: var(--first-color);
+    margin-left: 15px;
 }
 
 @media screen and (max-width : 768px){
@@ -142,34 +173,40 @@ a{
         transition: 0.5s;
     }
 
+    /* =============== icones =============== */
     .nav__toggle{
         display: flex;
         align-items: center;
     }
-
     .bx{
         font-size: 30px;
+        margin: 0;
     }
-
     .bx-search::before, .bx-user-circle::before{
         display: none;
     }
 
+
+    /* =============== nav menu =============== */
     .nav__menu{
         width: 80%;
         height: calc(100vh - 72px);
+        margin: 0;
         position: absolute;
         top: 72px;
-        left: 0;
+        left: -100%;
         z-index: 100;
         background: #f7f7f7;
         overflow: scroll;
+        transition: all 0.2s ease-in-out;
     }
     .nav_list{
         width: 100%;
         display: block;
         margin: 0;
-        
+    }
+    .nav__item {
+        margin-right: 0;
     }
     .nav__link {
         width: 100%;
@@ -180,14 +217,23 @@ a{
     }
     .nav__link h2 {
         margin: 0;
+        font-size: var(--h2-font-size);
     }
     .nav__link .bxs-down-arrow::before{
         font-size: 15px;
         display: flex;
         align-items: center;
     }
-
     .under_nav__item{
         display: none;
     }
+    
 }
+
+/* =============== show pour voir le menu ouvrant sur mobile =============== */
+.show{
+    left: 0;
+}
+
+/* =============== Classe pour afficher les types de vêtement pour chaque sexe =============== */
+
