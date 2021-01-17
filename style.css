@@ -1,5 +1,193 @@
-/* =======================  ======================= */
+/* ============== Google font Roboto ============== */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* ============== Variables CSS ============== */
+
+:root {
+    /*Général*/
+    --header-height: 5rem;
+
+    /*Colors*/
+    --first-color: #333;
+    --second-color: #fff;
+
+    /*Fonts & size*/
+    --roboto-font: 'Roboto', sans-serif;
+    --semi-weight: 500;
+
+    --big-font-size: 2rem;          /*32px*/
+    --h2-font-size: 1.25rem;        /*20px*/
+    --normal-font-size: 0.938rem;   /*15px*/
+
+    /*Marges*/
+    --mb-1: 0.5rem;                 /*8px*/
+    --mb-2: 1rem;                   /*16px*/
+    --mb-3: 1.5rem;                 /*24px*/
+    --mb-4: 2rem;                   /*32px*/
+    --mb-5: 2.5rem;                 /*40px*/
+    --mb-6: 3rem;                   /*48px*/
+
+    /*z-index*/
+    --z-back: -10;
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+@media screen and (min-width : 768px){
+    :root{
+        --big-font-size: 3.5rem;    /*56px*/
+        --h2-font-size: 2rem;       /*32px*/
+        --normal-font-size: 1rem;   /*16px*/
+    }
+}
 
 
+/* ============== Classes CSS Générales ============== */
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: var(--roboto-font);
+    font-size: var(--normal-font-size);
+    margin: var(--header-height) 0 0 0;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
 
 
+/* ============== NAV BAR RESPONSIVE ============== */
+.header{
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    
+}
+
+.nav__container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.nav__toggle{
+    display: none;
+}
+
+.nav__brand a{
+    color: var(--first-color);
+    user-select: none;
+    text-transform: uppercase;
+}
+
+.nav_list{
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+.nav__item{
+
+}
+.nav__link{
+    display: flex;
+    align-items: center;
+}
+.nav__link .bxs-down-arrow::before{
+    display: none;
+}
+.nav__link h2{
+    text-transform: uppercase;
+    color: var(--first-color);
+}
+
+.under_nav__item{
+    display: none;
+    padding: 0;
+}
+
+.under_nav__link {
+    display: block;
+    padding: 1rem 1.5rem;
+    margin: 5px 0;
+    color: var(--first-color);
+}
+
+.bx{
+    font-size: 25px;
+    color: var(--first-color);
+}
+
+@media screen and (max-width : 768px){
+    .nav__container{
+        padding:0 1.5rem ;
+        justify-content: space-between;
+        transition: 0.5s;
+    }
+
+    .nav__toggle{
+        display: flex;
+        align-items: center;
+    }
+
+    .bx{
+        font-size: 30px;
+    }
+
+    .bx-search::before, .bx-user-circle::before{
+        display: none;
+    }
+
+    .nav__menu{
+        width: 80%;
+        height: calc(100vh - 72px);
+        position: absolute;
+        top: 72px;
+        left: 0;
+        z-index: 100;
+        background: #f7f7f7;
+        overflow: scroll;
+    }
+    .nav_list{
+        width: 100%;
+        display: block;
+        margin: 0;
+        
+    }
+    .nav__link {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+    }
+    .nav__link h2 {
+        margin: 0;
+    }
+    .nav__link .bxs-down-arrow::before{
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .under_nav__item{
+        display: none;
+    }
+}
