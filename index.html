@@ -11,65 +11,32 @@
      <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-
-    <div class="chat__bot">
-        <a href="">
-            <i class='bx bx-message-rounded'></i>
-        </a>
-    </div>
-
     <!-- ======================= HEADER ======================= -->
-    <header class="header">
+    <header id="header">
         <nav class="nav__container">
             <!-- ========== Toggle ========== -->
             <div class="nav__toggle" id="nav-toggle">
                 <i class="bx bx-menu"></i>
             </div>
             <!-- ========== Brand  + Menu list ========== -->
-            <div class="nav__brand-Menu">
+            <div class="nav__brand-And-Menu">
                 <div class="nav__brand">
                     <a href=""><h1>Brand.</h1></a>
                 </div>
                 <!-- ========== Menu list ========== -->
                 <div class="nav__menu" id="nav-menu">
-                    <ul class="nav_list">
+                    <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="#" class="nav__link"><h2>Homme</h2><i class='bx bxs-down-arrow'></i></a>
-                            <ul class="under_nav__item">
-                                <li class=""><a href="" class="under_nav__link">Nouveautés</a></li>
-                                <li class=""><a href="" class="under_nav__link">Hauts</a></li>
-                                <li class=""><a href="" class="under_nav__link">Bas</a></li>
-                                <li class=""><a href="" class="under_nav__link">Sous-vêtements et chaussettes</a></li>
-                                <li class=""><a href="" class="under_nav__link">Chaussures</a></li>
-                                <li class=""><a href="" class="under_nav__link">Vestes et manteaux</a></li>
-                            </ul>
+                            <a href="homme.html" class="nav__link" id="homme">Homme</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link"><h2>Femme</h2><i class='bx bxs-down-arrow'></i></a>
-                            <ul class="under_nav__item">
-                                <li class=""><a href="" class="under_nav__link">Nouveautés</a></li>
-                                <li class=""><a href="" class="under_nav__link">Hauts</a></li>
-                                <li class=""><a href="" class="under_nav__link">Bas</a></li>
-                                <li class=""><a href="" class="under_nav__link">Sous-vêtements et chaussettes</a></li>
-                                <li class=""><a href="" class="under_nav__link">Jupes et robes</a></li>                            
-                                <li class=""><a href="" class="under_nav__link">Chaussures</a></li>
-                                <li class=""><a href="" class="under_nav__link">Vestes et manteaux</a></li>
-                                <li class=""><a href="" class="under_nav__link">Acessoires</a></li>
-                            </ul>
+                            <a href="femme.html" class="nav__link" id="femme">Femme</a> 
                         </li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link"><h2>Enfant</h2><i class='bx bxs-down-arrow'></i></a>
-                            <ul class="under_nav__item">
-                                <li class=""><a href="" class="under_nav__link">Nouveautés</a></li>
-                                <li class=""><a href="" class="under_nav__link">Hauts</a></li>
-                                <li class=""><a href="" class="under_nav__link">Bas</a></li>
-                                <li class=""><a href="" class="under_nav__link">Sous-vêtements et chaussettes</a></li>
-                                <li class=""><a href="" class="under_nav__link">Chaussures</a></li>
-                                <li class=""><a href="" class="under_nav__link">Vestes et manteaux</a></li>
-                            </ul>
+                            <a href="enfant.html" class="nav__link" id="enfant">Enfant</a>  
                         </li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link"><h2>Réductions</h2></a>
+                            <a href="reduction.html" class="nav__link">Réductions</a>
                         </li>
                     </ul>
                 </div>
@@ -83,6 +50,70 @@
         </nav>
     </header>
 
+    <main id="main">
+
+        <section id="clothing-choose" class="wrapper">
+            <div class="clothing__box">
+                <a href=""><img src="IMG/sneakers.png" alt=""></a>
+                <div class="clothing__infos">
+                    <h2>Chaussures</h2>
+                    <p>Nouveaux styles</p>
+                </div>
+            </div>
+
+            <div class="clothing__box">
+                <a href=""><img src="IMG/sweat.png" alt=""></a>
+                <div class="clothing__infos">
+                    <h2>Sweat</h2>
+                    <p>Nouveautés</p>
+                </div>
+            </div>
+
+            <div class="clothing__box">
+                <a href=""><img src="IMG/robePrintemps.png" alt=""></a>
+                <div class="clothing__infos">
+                    <h2>robe</h2>
+                    <p>Nouvelle collection</p>
+                </div>
+            </div>
+
+            <div class="clothing__box">
+                <a href=""><img src="IMG/accessoires.png" alt=""></a>
+                <div class="clothing__infos">
+                    <h2>accessoires</h2>
+                    <p>Réductions</p>
+                </div>
+            </div>
+            
+        </section>
+
+
+        <section id="nouveautes-section" class="wrapper">
+            <div class="nouveautes__image">
+                <img src="IMG/SweatNewCollection.jpg" alt="">
+            </div>
+            <div class="nouveautes__infos">
+                
+                <h2>Prenez un nouveau départ</h2>
+                
+                <button>découvrez les nouvelles collections</button>
+            </div>
+        </section>
+
+        <!-- ======================= PROMOTIONS ======================= -->
+        <section>
+            <div>
+                <img src="" alt="">
+            </div>
+            <div>
+                <h2>-20% sur les hauts, les jeans et plus!</h2>
+            </div>
+        </section>
+
+        <!-- ======================= Footer ======================= -->
+
+
+    </main>
     
     <script src="main.js"></script>
 </body>

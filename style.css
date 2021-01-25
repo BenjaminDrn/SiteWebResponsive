@@ -3,237 +3,247 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 /* ============== Variables CSS ============== */
-
-:root {
-    /*Général*/
+:root{
+    /* ============ hauteur header ============*/
     --header-height: 5rem;
 
-    /*Colors*/
-    --first-color: #333;
-    --second-color: #fff;
+    /* ============ Colors ============*/
+    --first-color: #ffffff;
+    --second-color: #333333;
+    --third-color: ;
 
-    /*Fonts & size*/
-    --roboto-font: 'Roboto', sans-serif;
-    --semi-weight: 500;
-
-    --big-font-size: 2rem;          /*32px*/
-    --h2-font-size: 1.25rem;        /*20px*/
-    --normal-font-size: 0.938rem;   /*15px*/
-
-    /*Marges*/
-    --mb-1: 0.5rem;                 /*8px*/
-    --mb-2: 1rem;                   /*16px*/
-    --mb-3: 1.5rem;                 /*24px*/
-    --mb-4: 2rem;                   /*32px*/
-    --mb-5: 2.5rem;                 /*40px*/
-    --mb-6: 3rem;                   /*48px*/
-
-    /*z-index*/
+    /* ============ Z-index ============*/
     --z-back: -10;
     --z-normal: 1;
     --z-tooltip: 10;
     --z-fixed: 100;
+
+    --h1-font-size: 20px;
+    --h2-font-size: 18px;
+    --nav-list-font-size: 22px;
+    --p-font-size: 15px;
+    --icones-font-size: 30px;
+
 }
 @media screen and (min-width : 768px){
     :root{
-        --big-font-size: 3.5rem;    /*56px*/
-        --h2-font-size: 2rem;       /*32px*/
-        --normal-font-size: 1rem;   /*16px*/
+        --h1-font-size: 25px;
+        /* --h2-font-size: ; */
+        --nav-list-font-size: 15px;
+        /* --p-font_size: ; */
+        --icones-font-size: 30px;
     }
 }
+/* @media screen and (min-width : 992px){
+    :root{
+        --h1-font-size: ;
+        --h2-font-size: ;
+        --nav-list-font-size: ;
+        --p-font_size: ;
+        --icones-font-size: ;
+    }
+} */
+
+/* ============== Webkit Scrollbar (enlever la scrollbar) ============== */
+::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+}
 
 
-/* ============== Classes CSS Générales ============== */
-
-*,
-::before,
-::after {
+/* ============== Classes générales ============== */
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-
 body {
-    scroll-behavior: smooth;
-    font-family: var(--roboto-font);
-    font-size: var(--normal-font-size);
-    margin: var(--header-height) 0 0 0;
+    font-family: 'roboto', sans-serif;
+    font-size: 15px;
 }
-
 li{
     list-style: none;
 }
-
 a{
     text-decoration: none;
 }
 
 
-
-/* ============== CHAT BOT ============== */
-.bx-message-rounded::before{
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    padding: 13px;
-    color: var(--second-color);
-    background: var(--first-color);
-    font-size: 30px;
-    border-radius: 50%;
-}
-
-
-
-/* ============== NAV BAR RESPONSIVE ============== */
-.header{
+/* ============== HEADER ============== */
+#header{
     width: 100%;
     height: var(--header-height);
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+    z-index: var(--z-fixed);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
-
-.nav__container{
+#header .nav__container{
     width: 100%;
+    padding: 0 20px;
+    height: var(--header-height);
     display: flex;
+    align-items: center;
     justify-content: space-between;
+}
+#header .nav__container .nav__toggle{
+    height: 35px;
+}
+#header .nav__container .bx-menu::before{
+    height: 35px;
+    display: flex;
     align-items: center;
-    padding: 0 2rem;
-    position: relative;
+    font-size: 35px;
+    color: var(--second-color);
 }
 
-.nav__toggle{
-    display: none;
-}
-
-.nav__brand-Menu {
+/* ============== Navigation ============== */
+#header .nav__container .nav__brand-And-Menu{
     display: flex;
     align-items: center;
 }
-
-.nav__brand a{
-    font: var(--h2-font-size);
-    color: var(--first-color);
-    user-select: none;
+#header .nav__container .nav__brand a h1{
+    height: 25px;
+    display: flex;
+    align-items: center;
+    font-size: var(--h1-font-size);
+    color: var(--second-color);
     text-transform: uppercase;
 }
-
-.nav__menu{
-    margin-left: 2rem;
+#header .nav__container .nav__menu{
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    position: absolute;
+    top: var(--header-height);
+    left: -100%;
+    transition: all 0.3s ease-in-out;
 }
-
-.nav_list{
-    display: flex;
-    align-items: center;
-    padding: 0;
+#header .nav__container .nav__menu .nav__list{
+    width: 85%;
+    height: calc(100vh - var(--header-height));
+    background: #eeeeee;   
 }
-
-.nav__item{
-    margin-right: 30px;
-}
-
-.nav__link{
-    display: flex;
-    align-items: center;
-}
-
-.nav__link .bxs-down-arrow::before{
-    display: none;
-}
-
-.nav__link h2{
+#header .nav__container .nav__menu .nav__list .nav__item{
+    width: 100%;
+    padding: 30px 20px;
     text-transform: uppercase;
-    color: var(--first-color);
-    font-size: 16px;
+}
+#header .nav__container .nav__menu .nav__list .nav__item .nav__link{
+    width: 100%;
+    font-size: var(--nav-list-font-size);
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: var(--second-color);
 }
 
-.under_nav__item{
+/* ============== icones panier, recherche et connexion compte ============== */
+#header .nav__container .nav__icones {
+    display: flex;
+    align-items: center;
+    font-size: var(--icones-font-size);
+    color: var(--second-color);
+}
+#header .nav__container .nav__icones .bx-user-circle::before, #header .nav__container .nav__icones .bx-search::before{
     display: none;
-    padding: 0;
 }
 
-.under_nav__link {
-    display: block;
-    padding: 1rem 1.5rem;
-    margin: 5px 0;
-    color: var(--first-color);
-}
-
-.bx{
-    font-size: 25px;
-    color: var(--first-color);
-    margin-left: 15px;
-}
-
-@media screen and (max-width : 768px){
-    .nav__container{
-        padding:0 1.5rem ;
-        justify-content: space-between;
-        transition: 0.5s;
-    }
-
-    /* =============== icones =============== */
-    .nav__toggle{
-        display: flex;
-        align-items: center;
-    }
-    .bx{
-        font-size: 30px;
-        margin: 0;
-    }
-    .bx-search::before, .bx-user-circle::before{
-        display: none;
-    }
-
-
-    /* =============== nav menu =============== */
-    .nav__menu{
-        width: 80%;
-        height: calc(100vh - 72px);
-        margin: 0;
-        position: absolute;
-        top: 72px;
-        left: -100%;
-        z-index: 100;
-        background: #f7f7f7;
-        overflow: scroll;
-        transition: all 0.2s ease-in-out;
-    }
-    .nav_list{
-        width: 100%;
-        display: block;
-        margin: 0;
-    }
-    .nav__item {
-        margin-right: 0;
-    }
-    .nav__link {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.5rem;
-    }
-    .nav__link h2 {
-        margin: 0;
-        font-size: var(--h2-font-size);
-    }
-    .nav__link .bxs-down-arrow::before{
-        font-size: 15px;
-        display: flex;
-        align-items: center;
-    }
-    .under_nav__item{
-        display: none;
-    }
-    
-}
-
-/* =============== show pour voir le menu ouvrant sur mobile =============== */
-.show{
+/* ============== Class qui permet d'afficher ou non la navigation ============== */
+#header .nav__container .show {
     left: 0;
 }
 
-/* =============== Classe pour afficher les types de vêtement pour chaque sexe =============== */
+/* ============== Responsive du header et de la barre de navigation ============== */
+@media screen and (min-width : 768px){
+    /* ========== désactive l'îcone toggle ========== */
+    #header .nav__container .nav__toggle{
+        display: none;
+    }
+    #header .nav__container{
+        padding: 0 30px;
+    }
+    
+    /* ========== navigation ========== */
+    #header .nav__container .nav__brand a h1{
+        font-size: var(--h1-font-size);
+    }
+    #header .nav__container .nav__menu{
+        height: var(--header-height);
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    #header .nav__container .nav__menu .nav__list{
+        width: 85%;
+        height: var(--header-height);
+        display: flex;
+        align-items: center;
+        background: transparent;  
+    }
+    
+    #header .nav__container .nav__menu .nav__list .nav__item .nav__link{
+        font-weight: medium;
+    }
+    /* ========== Affiche les îcones recherche et connexion au compte ========== */
+    #header .nav__container .nav__icones .bx-user-circle::before, #header .nav__container .nav__icones .bx-search::before{
+        display: block;
+    }
+    #header .nav__container .nav__icones .bx {
+        margin-right: 10px;
+    }
+}
 
+
+/* ============== MAIN ============== */
+#main {
+    margin-top: var(--header-height);
+}
+.wrapper {
+    width: 95%;
+    padding-top: 20px;
+    margin: 0 auto;
+}
+#clothing-choose {
+    display: flex;
+    flex-wrap: wrap;
+}
+#clothing-choose .clothing__box {
+    width: calc((100%-60px)/2);
+    display: block;
+    padding: 0 3px;
+    margin-bottom: 20px;
+}
+#clothing-choose .clothing__box a {
+    width: 100%;
+   
+}
+#clothing-choose .clothing__box a img{
+    width: 100%;
+    vertical-align: top;
+}
+#clothing-choose .clothing__box .clothing__infos h2 {
+    width: 100%;
+    margin-top: 15px;
+    font-size: var(--h2-font-size);
+    text-align: center;
+    text-transform: uppercase;
+}
+#clothing-choose .clothing__box .clothing__infos p {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    font-size: var(--p-font-size);
+    text-align: center;
+}
+
+@media screen and (min-width : 768px){
+    #clothing-choose .clothing__box {
+        width: calc((100%-60px)/4);
+    }
+}
+
+
+img{
+    width: 100px;
+}
