@@ -1,8 +1,8 @@
 /* ================ MENU SHOW ================ */
 function showMenu(toggleId, navId){
-    const toggle = document.getElementById(toggleId),
-    backgroundToggle = document.getElementById('nav-menu')
-    nav = document.getElementById(navId)
+    const toggle = document.getElementById(toggleId)
+    const backgroundToggle = document.getElementById('nav-menu')
+    const nav = document.getElementById(navId)
 
     if(toggle && nav){
         toggle.addEventListener('click', ()=>{

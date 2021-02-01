@@ -10,7 +10,7 @@
     /* ============ Colors ============*/
     --first-color: #ffffff;
     --second-color: #333333;
-    --third-color: ;
+    --third-color: #eeeeee;
 
     /* ============ Z-index ============*/
     --z-back: -10;
@@ -78,7 +78,7 @@ a{
     left: 0;
     background: #ffffff;
     z-index: var(--z-fixed);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 #header .nav__container{
     width: 100%;
@@ -123,7 +123,7 @@ a{
 #header .nav__container .nav__menu .nav__list{
     width: 85%;
     height: calc(100vh - var(--header-height));
-    background: #eeeeee;   
+    background: var(--third-color);   
 }
 #header .nav__container .nav__menu .nav__list .nav__item{
     width: 100%;
@@ -195,55 +195,155 @@ a{
 }
 
 
-/* ============== MAIN ============== */
+/* ============== MAIN + WRAPPER ============== */
 #main {
-    margin-top: var(--header-height);
+    padding-top: var(--header-height);
+    position: relative;
 }
 .wrapper {
-    width: 95%;
-    padding-top: 20px;
-    margin: 0 auto;
+    padding: 0 20px;
+    margin: 20px 0;
 }
-#clothing-choose {
+
+/* ============== informations news  ============== */
+#infos-news {
+    display: block;
+}
+#infos-news .infos__image a img {
+    width: 100%;
+}
+
+
+/* ============== CHOIX DES VETEMENTS ============== *//*utiliser even et odd pour pair et impair*/
+#clothing-choose ul{
     display: flex;
     flex-wrap: wrap;
 }
-#clothing-choose .clothing__box {
-    width: calc((100%-60px)/2);
+
+#clothing-choose ul .clothing__box {
+    width: calc((100% - 12px) / 2);
     display: block;
-    padding: 0 3px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
-#clothing-choose .clothing__box a {
+.clothing__box:nth-child(odd){
+    margin-right: 6px;
+}
+.clothing__box:nth-child(even){
+    margin-left: 6px;
+}
+
+#clothing-choose ul .clothing__box a {
     width: 100%;
-   
 }
-#clothing-choose .clothing__box a img{
+#clothing-choose ul .clothing__box a img{
     width: 100%;
     vertical-align: top;
 }
-#clothing-choose .clothing__box .clothing__infos h2 {
+#clothing-choose ul .clothing__box a .clothing__infos h2 {
     width: 100%;
-    margin-top: 15px;
+    padding-top: 15px;
     font-size: var(--h2-font-size);
+    color: var(--second-color);
     text-align: center;
     text-transform: uppercase;
 }
-#clothing-choose .clothing__box .clothing__infos p {
+#clothing-choose ul .clothing__box a .clothing__infos p {
     width: 100%;
-    margin-top: 5px;
-    margin-bottom: 25px;
+    padding-top: 5px;
     font-size: var(--p-font-size);
+    color: var(--second-color);
     text-align: center;
 }
 
 @media screen and (min-width : 768px){
-    #clothing-choose .clothing__box {
-        width: calc((100%-60px)/4);
+    #clothing-choose ul .clothing__box {
+        width: calc((100% - 60px)/4);
+    }
+    .clothing__box:nth-child(2), .clothing__box:nth-child(3){
+        margin: 0 10px ;
     }
 }
 
+/* ============== REDUCTIONS ============== */
+#reductions{
+    background-color: var(--second-color);
+    width: 100%;
+    padding: 20px;
+}
+#reductions .reductions__title {
+    color: var(--first-color);
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+#reductions .reductions__clothings {
+    display: flex;
+    overflow: scroll;
+}
+#reductions .reductions__clothings .clothing{
+    width: calc((100% - 10px)/2);
+    min-width: 135px;
+    margin: 20px 10px 20px 0;
+    padding: 10px;
+    background: var(--first-color);
+}
+#reductions .reductions__clothings .clothing img{
+    width: 100%;
+}
+#reductions .reductions__clothings .clothing .clothing__infos {
+    width: 100%;
+}
+#reductions .reductions__clothings .clothing .clothing__infos p{
+    font-size: var(--p-font-size);
+    color: #707070;
+    font-weight: 500;
+    height: 40px;
+    overflow: hidden;
+}
+#reductions .reductions__clothings .clothing .clothing__infos h3{
+    width: 100%;
+    font-weight: bold;
+}
+#reductions .view__more__clothing{
+    text-align: center;
+}
+#reductions .view__more__clothing button{
+    margin: 20px 0;
+    padding: 10px 30px;
+    border: 2px solid var(--first-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--first-color);
+    background: none;
+}
+
+/* ============== FOOTER ============== */
+#footer{
+    width: 100%;
+    padding: 20px;
+    background-color: var(--second-color);
+}
+#footer .newsletter {
+    
+}
+#footer .newsletter h3{
+    text-align: center;
+    color: var(--first-color);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+#footer .newsletter .newsletter__form{
+    width: 100%;
+}
+#footer .newsletter .newsletter__form input[type="text"]{
+    width: calc(100% - 50px);
+    border: none;
+    padding: 10px 20px;
+}
+#footer .newsletter .newsletter__form input[type="submit"]{
+    width: 40px;
+    padding: 10px;
+}
 
 img{
-    width: 100px;
+    width: 50px;
 }
