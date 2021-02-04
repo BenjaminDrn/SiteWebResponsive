@@ -3,30 +3,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 /* ============== Variables CSS ============== */
-:root{
+
+:root {
     /* ============ hauteur header ============*/
     --header-height: 5rem;
-
     /* ============ Colors ============*/
     --first-color: #ffffff;
     --second-color: #333333;
     --third-color: #eeeeee;
-
     /* ============ Z-index ============*/
     --z-back: -10;
     --z-normal: 1;
     --z-tooltip: 10;
     --z-fixed: 100;
-
     --h1-font-size: 20px;
     --h2-font-size: 18px;
     --nav-list-font-size: 22px;
     --p-font-size: 15px;
     --icones-font-size: 30px;
-
 }
-@media screen and (min-width : 768px){
-    :root{
+
+@media screen and (min-width: 768px) {
+     :root {
         --h1-font-size: 25px;
         /* --h2-font-size: ; */
         --nav-list-font-size: 15px;
@@ -34,6 +32,8 @@
         --icones-font-size: 30px;
     }
 }
+
+
 /* @media screen and (min-width : 992px){
     :root{
         --h1-font-size: ;
@@ -44,43 +44,53 @@
     }
 } */
 
+
 /* ============== Webkit Scrollbar (enlever la scrollbar) ============== */
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     width: 0px;
     height: 0px;
 }
 
 
 /* ============== Classes générales ============== */
-*, ::after, ::before {
+
+*,
+ ::after,
+ ::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'roboto', sans-serif;
     font-size: 15px;
 }
-li{
+
+li {
     list-style: none;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
 
 /* ============== HEADER ============== */
-#header{
+
+#header {
     width: 100%;
     height: var(--header-height);
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     background: #ffffff;
     z-index: var(--z-fixed);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
-#header .nav__container{
+
+#header .nav__container {
     width: 100%;
     padding: 0 20px;
     height: var(--header-height);
@@ -88,10 +98,12 @@ a{
     align-items: center;
     justify-content: space-between;
 }
-#header .nav__container .nav__toggle{
+
+#header .nav__container .nav__toggle {
     height: 35px;
 }
-#header .nav__container .bx-menu::before{
+
+#header .nav__container .bx-menu::before {
     height: 35px;
     display: flex;
     align-items: center;
@@ -99,12 +111,15 @@ a{
     color: var(--second-color);
 }
 
+
 /* ============== Navigation ============== */
-#header .nav__container .nav__brand-And-Menu{
+
+#header .nav__container .nav__brand-And-Menu {
     display: flex;
     align-items: center;
 }
-#header .nav__container .nav__brand a h1{
+
+#header .nav__container .nav__brand a h1 {
     height: 25px;
     display: flex;
     align-items: center;
@@ -112,7 +127,8 @@ a{
     color: var(--second-color);
     text-transform: uppercase;
 }
-#header .nav__container .nav__menu{
+
+#header .nav__container .nav__menu {
     width: 100%;
     height: calc(100vh - var(--header-height));
     position: absolute;
@@ -120,17 +136,20 @@ a{
     left: -100%;
     transition: all 0.3s ease-in-out;
 }
-#header .nav__container .nav__menu .nav__list{
+
+#header .nav__container .nav__menu .nav__list {
     width: 85%;
     height: calc(100vh - var(--header-height));
-    background: var(--third-color);   
+    background: var(--third-color);
 }
-#header .nav__container .nav__menu .nav__list .nav__item{
+
+#header .nav__container .nav__menu .nav__list .nav__item {
     width: 100%;
     padding: 30px 20px;
     text-transform: uppercase;
 }
-#header .nav__container .nav__menu .nav__list .nav__item .nav__link{
+
+#header .nav__container .nav__menu .nav__list .nav__item .nav__link {
     width: 100%;
     font-size: var(--nav-list-font-size);
     letter-spacing: 1px;
@@ -138,55 +157,62 @@ a{
     color: var(--second-color);
 }
 
+
 /* ============== icones panier, recherche et connexion compte ============== */
+
 #header .nav__container .nav__icones {
     display: flex;
     align-items: center;
     font-size: var(--icones-font-size);
     color: var(--second-color);
 }
-#header .nav__container .nav__icones .bx-user-circle::before, #header .nav__container .nav__icones .bx-search::before{
+
+#header .nav__container .nav__icones .bx-user-circle::before,
+#header .nav__container .nav__icones .bx-search::before {
     display: none;
 }
 
+
 /* ============== Class qui permet d'afficher ou non la navigation ============== */
+
 #header .nav__container .show {
     left: 0;
 }
 
+
 /* ============== Responsive du header et de la barre de navigation ============== */
-@media screen and (min-width : 768px){
+
+@media screen and (min-width: 768px) {
     /* ========== désactive l'îcone toggle ========== */
-    #header .nav__container .nav__toggle{
+    #header .nav__container .nav__toggle {
         display: none;
     }
-    #header .nav__container{
+    #header .nav__container {
         padding: 0 30px;
     }
-    
     /* ========== navigation ========== */
-    #header .nav__container .nav__brand a h1{
+    #header .nav__container .nav__brand a h1 {
         font-size: var(--h1-font-size);
     }
-    #header .nav__container .nav__menu{
+    #header .nav__container .nav__menu {
         height: var(--header-height);
         position: relative;
         top: 0;
         left: 0;
     }
-    #header .nav__container .nav__menu .nav__list{
+    #header .nav__container .nav__menu .nav__list {
         width: 85%;
         height: var(--header-height);
         display: flex;
         align-items: center;
-        background: transparent;  
+        background: transparent;
     }
-    
-    #header .nav__container .nav__menu .nav__list .nav__item .nav__link{
+    #header .nav__container .nav__menu .nav__list .nav__item .nav__link {
         font-weight: medium;
     }
     /* ========== Affiche les îcones recherche et connexion au compte ========== */
-    #header .nav__container .nav__icones .bx-user-circle::before, #header .nav__container .nav__icones .bx-search::before{
+    #header .nav__container .nav__icones .bx-user-circle::before,
+    #header .nav__container .nav__icones .bx-search::before {
         display: block;
     }
     #header .nav__container .nav__icones .bx {
@@ -196,26 +222,34 @@ a{
 
 
 /* ============== MAIN + WRAPPER ============== */
+
 #main {
-    padding-top: var(--header-height);
     position: relative;
 }
+
 .wrapper {
     padding: 0 20px;
     margin: 20px 0;
 }
 
+
 /* ============== informations news  ============== */
+
 #infos-news {
     display: block;
 }
+
 #infos-news .infos__image a img {
     width: 100%;
 }
 
 
-/* ============== CHOIX DES VETEMENTS ============== *//*utiliser even et odd pour pair et impair*/
-#clothing-choose ul{
+/* ============== CHOIX DES VETEMENTS ============== */
+
+
+/*utiliser even et odd pour pair et impair*/
+
+#clothing-choose ul {
     display: flex;
     flex-wrap: wrap;
 }
@@ -225,20 +259,24 @@ a{
     display: block;
     margin-bottom: 30px;
 }
-.clothing__box:nth-child(odd){
+
+.clothing__box:nth-child(odd) {
     margin-right: 6px;
 }
-.clothing__box:nth-child(even){
+
+.clothing__box:nth-child(even) {
     margin-left: 6px;
 }
 
 #clothing-choose ul .clothing__box a {
     width: 100%;
 }
-#clothing-choose ul .clothing__box a img{
+
+#clothing-choose ul .clothing__box a img {
     width: 100%;
     vertical-align: top;
 }
+
 #clothing-choose ul .clothing__box a .clothing__infos h2 {
     width: 100%;
     padding-top: 15px;
@@ -247,6 +285,7 @@ a{
     text-align: center;
     text-transform: uppercase;
 }
+
 #clothing-choose ul .clothing__box a .clothing__infos p {
     width: 100%;
     padding-top: 5px;
@@ -255,58 +294,70 @@ a{
     text-align: center;
 }
 
-@media screen and (min-width : 768px){
+@media screen and (min-width: 768px) {
     #clothing-choose ul .clothing__box {
         width: calc((100% - 60px)/4);
     }
-    .clothing__box:nth-child(2), .clothing__box:nth-child(3){
-        margin: 0 10px ;
+    .clothing__box:nth-child(2),
+    .clothing__box:nth-child(3) {
+        margin: 0 10px;
     }
 }
 
+
 /* ============== REDUCTIONS ============== */
-#reductions{
+
+#reductions {
     background-color: var(--second-color);
     width: 100%;
     padding: 20px;
 }
+
 #reductions .reductions__title {
     color: var(--first-color);
     text-transform: uppercase;
     margin: 20px 0;
 }
+
 #reductions .reductions__clothings {
     display: flex;
     overflow: scroll;
 }
-#reductions .reductions__clothings .clothing{
+
+#reductions .reductions__clothings .clothing {
     width: calc((100% - 10px)/2);
     min-width: 135px;
     margin: 20px 10px 20px 0;
     padding: 10px;
     background: var(--first-color);
 }
-#reductions .reductions__clothings .clothing img{
+
+#reductions .reductions__clothings .clothing img {
     width: 100%;
 }
+
 #reductions .reductions__clothings .clothing .clothing__infos {
     width: 100%;
 }
-#reductions .reductions__clothings .clothing .clothing__infos p{
+
+#reductions .reductions__clothings .clothing .clothing__infos p {
     font-size: var(--p-font-size);
     color: #707070;
     font-weight: 500;
     height: 40px;
     overflow: hidden;
 }
-#reductions .reductions__clothings .clothing .clothing__infos h3{
+
+#reductions .reductions__clothings .clothing .clothing__infos h3 {
     width: 100%;
     font-weight: bold;
 }
-#reductions .view__more__clothing{
+
+#reductions .view__more__clothing {
     text-align: center;
 }
-#reductions .view__more__clothing button{
+
+#reductions .view__more__clothing button {
     margin: 20px 0;
     padding: 10px 30px;
     border: 2px solid var(--first-color);
@@ -316,34 +367,42 @@ a{
     background: none;
 }
 
+
 /* ============== FOOTER ============== */
-#footer{
+
+#footer {
     width: 100%;
     padding: 20px;
     background-color: var(--second-color);
 }
-#footer .newsletter {
+
+
+/* #footer .newsletter {
     
-}
-#footer .newsletter h3{
+} */
+
+#footer .newsletter h3 {
     text-align: center;
     color: var(--first-color);
     font-weight: 500;
     margin-bottom: 10px;
 }
-#footer .newsletter .newsletter__form{
+
+#footer .newsletter .newsletter__form {
     width: 100%;
 }
-#footer .newsletter .newsletter__form input[type="text"]{
+
+#footer .newsletter .newsletter__form input[type="text"] {
     width: calc(100% - 50px);
     border: none;
     padding: 10px 20px;
 }
-#footer .newsletter .newsletter__form input[type="submit"]{
+
+#footer .newsletter .newsletter__form input[type="submit"] {
     width: 40px;
     padding: 10px;
 }
 
-img{
+img {
     width: 50px;
 }
