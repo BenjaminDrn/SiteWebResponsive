@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+/* ============== Google font Staatliches ============== */
+
+@import url('https://fonts.googleapis.com/css2? family = Staatliches & display = swap');
+
 /* ============== Variables CSS ============== */
 
 :root {
@@ -16,6 +20,7 @@
     --z-normal: 1;
     --z-tooltip: 10;
     --z-fixed: 100;
+    /* ============ Font-size ============*/
     --h1-font-size: 20px;
     --h2-font-size: 18px;
     --nav-list-font-size: 22px;
@@ -77,6 +82,28 @@ a {
 }
 
 
+/* ============== LOADER ============== */
+
+#loader {
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+}
+
+#loader .bx-loader-alt {
+    animation: spin 1s linear infinite;
+    color: #333;
+    font-size: 50px;
+}
+
+
 /* ============== HEADER ============== */
 
 #header {
@@ -86,7 +113,7 @@ a {
     top: 0;
     left: 0;
     background: #ffffff;
-    z-index: var(--z-fixed);
+    z-index: var(--z-tooltip);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
@@ -305,42 +332,60 @@ a {
 }
 
 
-/* ============== REDUCTIONS ============== */
+/* ============== REDUCTIONS / TOP DES VENTES ============== */
 
-#reductions {
-    background-color: var(--second-color);
+#reductions,
+#topVentes {
     width: 100%;
     padding: 20px;
 }
 
+#reductions {
+    background-color: var(--second-color);
+}
+
 #reductions .reductions__title {
     color: var(--first-color);
+}
+
+#topVentes .topVentes__title {
+    color: var(--second-color);
+}
+
+#reductions .reductions__title,
+#topVentes .topVentes__title {
     text-transform: uppercase;
     margin: 20px 0;
 }
 
-#reductions .reductions__clothings {
+#reductions .reductions__clothings,
+#topVentes .topVentes__clothings {
     display: flex;
     overflow: scroll;
 }
 
-#reductions .reductions__clothings .clothing {
+#reductions .reductions__clothings .clothing,
+#topVentes .topVentes__clothings .clothing {
     width: calc((100% - 10px)/2);
     min-width: 135px;
     margin: 20px 10px 20px 0;
     padding: 10px;
     background: var(--first-color);
+    border: 1px solid #dbdbdb;
 }
 
-#reductions .reductions__clothings .clothing img {
+#reductions .reductions__clothings .clothing img,
+#topVentes .topVentes__clothings .clothing img {
     width: 100%;
 }
 
-#reductions .reductions__clothings .clothing .clothing__infos {
+#reductions .reductions__clothings .clothing .clothing__infos,
+#topVentes .topVentes__clothings .clothing .clothing__infos {
     width: 100%;
 }
 
-#reductions .reductions__clothings .clothing .clothing__infos p {
+#reductions .reductions__clothings .clothing .clothing__infos p,
+#topVentes .topVentes__clothings .clothing .clothing__infos p {
     font-size: var(--p-font-size);
     color: #707070;
     font-weight: 500;
@@ -348,23 +393,34 @@ a {
     overflow: hidden;
 }
 
-#reductions .reductions__clothings .clothing .clothing__infos h3 {
+#reductions .reductions__clothings .clothing .clothing__infos h3,
+#topVentes .topVentes__clothings .clothing .clothing__infos h3 {
     width: 100%;
     font-weight: bold;
 }
 
-#reductions .view__more__clothing {
+#reductions .view__more__clothing,
+#topVentes .view__more__clothing {
     text-align: center;
 }
 
-#reductions .view__more__clothing button {
+#reductions .view__more__clothing button,
+#topVentes .view__more__clothing button {
     margin: 20px 0;
     padding: 10px 30px;
-    border: 2px solid var(--first-color);
     text-transform: uppercase;
     font-weight: bold;
-    color: var(--first-color);
     background: none;
+}
+
+#reductions .view__more__clothing button {
+    border: 2px solid var(--first-color);
+    color: var(--first-color);
+}
+
+#topVentes .view__more__clothing button {
+    border: 2px solid var(--second-color);
+    color: var(--second-color);
 }
 
 

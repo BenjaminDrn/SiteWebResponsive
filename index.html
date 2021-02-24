@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-     <!-- ======================= META ======================= -->
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- ======================= TITLE ======================= -->
-     <title>e-commerce website</title>
-     <!-- ======================= LINK ======================= -->
-     <link rel="stylesheet" href="style.css">
-     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ======================= META ======================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ======================= TITLE ======================= -->
+    <title>e-commerce website</title>
+    <!-- ======================= LINK ======================= -->
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
+
+    <!-- ======================= LOADER ======================= -->
+    <div id="loader">
+        <i class='bx bx-loader-alt'></i>
+    </div>
+
+
     <!-- ======================= HEADER ======================= -->
     <header id="header">
         <nav class="nav__container">
@@ -21,22 +30,24 @@
             <!-- ========== Brand  + Menu list ========== -->
             <div class="nav__brand-And-Menu">
                 <div class="nav__brand">
-                    <a href=""><h1>Brand.</h1></a>
+                    <a href="">
+                        <h1>Brand.</h1>
+                    </a>
                 </div>
                 <!-- ========== Menu list ========== -->
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="homme.html" class="nav__link" id="homme">Homme</a>
+                            <a href="#" class="nav__link" id="homme">Homme</a>
                         </li>
                         <li class="nav__item">
-                            <a href="femme.html" class="nav__link" id="femme">Femme</a> 
+                            <a href="#" class="nav__link" id="femme">Femme</a>
                         </li>
                         <li class="nav__item">
-                            <a href="enfant.html" class="nav__link" id="enfant">Enfant</a>  
+                            <a href="#" class="nav__link" id="enfant">Enfant</a>
                         </li>
                         <li class="nav__item">
-                            <a href="reduction.html" class="nav__link">Réductions</a>
+                            <a href="#" class="nav__link">Réductions</a>
                         </li>
                     </ul>
                 </div>
@@ -63,7 +74,7 @@
 
         <!-- ======================= HEADER ======================= -->
         <section id="clothing-choose" class="wrapper">
-            
+
             <ul>
                 <div class="clothing__box">
                     <a href="">
@@ -82,7 +93,7 @@
                             <h2>Lorem</h2>
                             <p>lorem ipsum</p>
                         </div>
-                    </a>    
+                    </a>
                 </div>
 
                 <div class="clothing__box">
@@ -92,7 +103,7 @@
                             <h2>Lorem</h2>
                             <p>lorem ipsum</p>
                         </div>
-                    </a>    
+                    </a>
                 </div>
 
                 <div class="clothing__box">
@@ -105,10 +116,10 @@
                     </a>
                 </div>
             </ul>
-            
+
         </section>
 
-        <!-- ======================= PROMOTIONS ======================= -->
+        <!-- ======================= REDUCTIONS ======================= -->
         <section id="reductions">
 
             <div class="reductions__title">
@@ -168,7 +179,70 @@
             <div class="view__more__clothing">
                 <a href=""><button>voir plus</button></a>
             </div>
-        
+
+        </section>
+
+        <!-- ======================= TOP DES VENTES ======================= -->
+        <section id="topVentes">
+
+            <div class="topVentes__title">
+                <h2>Top des ventes</h2>
+            </div>
+            <div class="topVentes__clothings">
+                <div class="clothing">
+                    <img src="IMG/Tshirt.png" alt="">
+                    <div class="clothing__infos">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi </p>
+                        <h3>99,90 €</h3>
+                    </div>
+                </div>
+                <div class="clothing">
+                    <img src="IMG/Tshirt.png" alt="">
+                    <div class="clothing__infos">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi </p>
+                        <h3>99,90 €</h3>
+                    </div>
+                </div>
+                <div class="clothing">
+                    <img src="IMG/Tshirt.png" alt="">
+                    <div class="clothing__infos">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi </p>
+                        <h3>99,90 €</h3>
+                    </div>
+                </div>
+                <div class="clothing">
+                    <img src="IMG/Tshirt.png" alt="">
+                    <div class="clothing__infos">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi </p>
+                        <h3>99,90 €</h3>
+                    </div>
+                </div>
+                <div class="clothing">
+                    <img src="IMG/Tshirt.png" alt="">
+                    <div class="clothing__infos">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi </p>
+                        <h3>99,90 €</h3>
+                    </div>
+                </div>
+                <div class="clothing">
+                    <img src="IMG/Tshirt.png" alt="">
+                    <div class="clothing__infos">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi </p>
+                        <h3>99,90 €</h3>
+                    </div>
+                </div>
+                <div class="clothing">
+                    <img src="IMG/Tshirt.png" alt="">
+                    <div class="clothing__infos">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi </p>
+                        <h3>99,90 €</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="view__more__clothing">
+                <a href=""><button>voir plus</button></a>
+            </div>
+
         </section>
 
         <!-- ======================= Footer ======================= -->
@@ -183,17 +257,28 @@
             <footer>
                 <ul>
                     <li><a href="">Plan du site</a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
+                    <li>
+                        <a href=""></a>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                    </li>
                 </ul>
             </footer>
         </section>
 
     </main>
-    
+
     <script src="main.js"></script>
 </body>
+
 </html>
